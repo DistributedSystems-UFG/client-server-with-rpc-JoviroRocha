@@ -16,6 +16,17 @@ class DBList(rpyc.Service):
 
   def exposed_value(self):
     return self.value
+    
+  def exposed_remove(self, data):
+    self.value.remove(data)
+    return
+  
+  def exposed_sort_ascending(self):
+    self.value.sort()
+    return
+
+  def exposed_sort_descending(self):
+    self.value.sort(reverse=True)
 
 if __name__ == "__main__":
   server = ThreadedServer(DBList(), port = PORT)
