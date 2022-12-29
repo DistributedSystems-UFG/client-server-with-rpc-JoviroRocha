@@ -35,7 +35,7 @@ class Client:
     # Search a value in the list
     elif x == '2':
       try:
-        data = int(input("Enter the data you want to search for: "))
+        data = float(input("Enter the data you want to search for: "))
       except ValueError:
         print("The value must be a decimal number, try again!\n")
         continue
@@ -46,7 +46,7 @@ class Client:
     # Add a single value to the list
     elif x == '3':
       try:
-        data = int(input("Enter the data you want to add to the list: "))
+        data = float(input("Enter the data you want to add to the list: "))
       except ValueError: 
         print("The value must be a decimal number, try again!\n")
         continue
@@ -64,7 +64,7 @@ class Client:
       for i in range(0, number_elements):
         try:
           print("Value ", (i + 1), ": ")
-          l = int(input())
+          l = float(input())
         except ValueError:
           print("An error has occurred! The value must be a decimal number! \nThe program is exiting... Try again!\n")
           exit(1)
@@ -75,7 +75,7 @@ class Client:
     # Remove an value from list
     elif x == '5':
       try:
-        data = int(input("Enter the value you want to remove from the list: "))
+        data = float(input("Enter the value you want to remove from the list: "))
       except ValueError:
         print("The value must be a decimal number, try again!\n")
         continue
