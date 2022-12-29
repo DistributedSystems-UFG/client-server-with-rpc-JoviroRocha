@@ -35,7 +35,7 @@ class Client:
     # Search a value in the list
     elif x == '2':
       try:
-        data = int(input("Enter the data you want to search for:\n"))
+        data = int(input("Enter the data you want to search for: "))
       except ValueError:
         print("The value must be a decimal number, try again!\n")
         continue
@@ -46,7 +46,7 @@ class Client:
     # Add a single value to the list
     elif x == '3':
       try:
-        data = int(input("Enter the data you want to add to the list:\n"))
+        data = int(input("Enter the data you want to add to the list: "))
       except ValueError: 
         print("The value must be a decimal number, try again!\n")
         continue
@@ -56,13 +56,14 @@ class Client:
     elif x == '4':
       data = []
       try:
-        number_elements = int(input("Number of elements in the list:\n"))
+        number_elements = int(input("Number of elements in the list: "))
       except ValueError:
         print("The value must be a decimal number, try again!\n")
         continue
       print("Enter the values from the list that you want to append: - Each value separated by an 'Enter'\n")
       for i in range(0, number_elements):
         try:
+          print("Value ", (i + 1), ": ")
           l = int(input())
         except ValueError:
           print("An error has occurred! The value must be a decimal number! \nThe program is exiting... Try again!\n")
@@ -74,7 +75,7 @@ class Client:
     # Remove an value from list
     elif x == '5':
       try:
-        data = int(input("Enter the value you want to remove from the list:\n"))
+        data = int(input("Enter the value you want to remove from the list: "))
       except ValueError:
         print("The value must be a decimal number, try again!\n")
         continue
@@ -83,13 +84,13 @@ class Client:
       print("All done! The value has been removed!\n")
     # Sort the list
     elif x == '6':
-      order = input("Type \"ascending\" to sort the list in ascending order or type \"descending\" to sort the list in descending order: \n")
+      order = input("Type \"ascending\" to sort the list in ascending order or type \"descending\" to sort the list in descending order: ")
       while (order != "ascending" and order != "descending"):
         print("Wrong value! Try again!\n")
-        order = input("Type \"ascending\" to sort the list in ascending order or type \"descending\" to sort the list in descending order: \n")
+        order = input("Type \"ascending\" to sort the list in ascending order or type \"descending\" to sort the list in descending order: ")
       if order == "ascending":
         conn.root.exposed_sort_ascending()
-        print("Done! The list was sorted in ascending order\!n")
+        print("Done! The list was sorted in ascending order! \n")
       else:
         conn.root.exposed_sort_descending()
         print("Done! The list was sorted in descending order!\n")
